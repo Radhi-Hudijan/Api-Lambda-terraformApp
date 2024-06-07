@@ -77,6 +77,22 @@ resource "aws_iam_role_policy_attachment" "lambda_policy" {
 }
 
 
+#qoute of the day function
+
+data "archive_file" "qoute_generator_lambda" {
+    type = "zip"
+    source_file = "${path.module}/lambdaFunctions/qoute-generator.py"
+    output_path = "${path.module}/lambdaFunctions/qoute-generator.zip"
+  
+}
+
+resource "aws_s3_object" "qoute_generator_lambda" {
+    bucket = aws_s3_bucket.lambda_bucket.bucket
+    key = "qoute-generator.zip"
+    source = data.archive_file.qoute_generator_lambda.output_path
+}
+
+
 
 
 
