@@ -1,4 +1,4 @@
-# Lambda-api-gateway-serverless-terraform
+
 # Lambda-api-gateway-serverless-terraform
 
 This project is a serverless application built using AWS Lambda, API Gateway, and Terraform. It provides a scalable and cost-effective solution for handling API requests.
