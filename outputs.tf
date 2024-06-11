@@ -23,13 +23,3 @@ output "stage_base_url" {
   value = aws_apigatewayv2_stage.lambda.invoke_url
   
 }
-
-output "health_lambda_invoke_arn" {
-  description = "value of the lambda invoke arn"
-  value = aws_lambda_function.health_check_lambda.invoke_arn
-}
-
-output "quote_lambda_invoke_arn" {
-  description = "value of the lambda invoke arn"
-  value = aws_lambda_function.qoute_generator_lambda.invoke_arn
-}
