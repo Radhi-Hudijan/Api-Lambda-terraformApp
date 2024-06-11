@@ -121,6 +121,7 @@ resource "aws_apigatewayv2_api" "serverless_lambda" {
 resource "aws_apigatewayv2_stage" "lambda" {
   api_id = aws_apigatewayv2_api.serverless_lambda.id
   name = "Dev_stage"
+  auto_deploy = true
 }
 
 ## integration and route for health check function
@@ -135,7 +136,7 @@ resource "aws_apigatewayv2_integration" "health" {
 
 resource "aws_apigatewayv2_route" "health_route" {
     api_id = aws_apigatewayv2_api.serverless_lambda.id
-    route_key = "Get /health"
+    route_key = "GET /health"
     target = "integrations/${aws_apigatewayv2_integration.health.id}"
 }
 
