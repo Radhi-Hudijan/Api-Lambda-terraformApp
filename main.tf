@@ -11,11 +11,11 @@ terraform {
     }
   }
 
-    required_version = "~> 1.2"
+  required_version = "~> 1.2"
 }
 
 # Creating a new S3 bucket
 resource "aws_s3_bucket" "lambda_bucket" {
-    bucket = "lambda-bucket-123456789"  
+  bucket = "lambda-bucket-123456789"
 }
 
